@@ -1,0 +1,10 @@
+[2026-08-12 15:53:03,571] 20 root INFO Logging has started.
+[2026-08-12 15:53:09,224] 19 root INFO Started Model Training
+[2026-08-12 15:53:09,233] 23 root INFO Successfully Read Cleaned data
+[2026-08-12 15:53:09,287] 34 root INFO Train_Test_split Completed
+[2026-08-12 15:53:09,287] 48 root INFO Random Forest pipeline Successfully Created!
+[2026-08-12 15:53:11,919] 83 root INFO Hyperparameter Tuning Started
+[2026-08-12 15:57:16,275] 87 root INFO Hyperparameter Tuning Ended
+[2026-08-12 15:57:16,365] 99 root INFO Comparining Baseline And Tuned Model
+[2026-08-12 16:35:41,855] 119 root INFO Best Model Saved
+[2026-08-12 16:35:41,855] 120 root INFO Training Completed!

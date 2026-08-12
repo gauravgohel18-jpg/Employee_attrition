@@ -1,0 +1,6 @@
+pandas
+scikit-learn
+numpy
+word2number
+openpyxl
+streamlit

@@ -1,0 +1,3 @@
+[2026-08-12 11:11:26,665] 20 root INFO Logging has started.
+[2026-08-12 11:11:26,665] 353 root INFO Try to Read Data
+[2026-08-12 11:11:26,687] 371 root ERROR Data cleaning pipeline failed

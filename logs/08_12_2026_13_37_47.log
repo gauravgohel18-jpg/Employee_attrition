@@ -1,0 +1,6 @@
+[2026-08-12 13:37:47,560] 20 root INFO Logging has started.
+[2026-08-12 13:37:52,047] 19 root INFO Started Model Training
+[2026-08-12 13:37:52,053] 23 root INFO Successfully Read Cleaned data
+[2026-08-12 13:37:52,099] 34 root INFO Train_Test_split Completed
+[2026-08-12 13:37:52,100] 48 root INFO Random Forest pipeline Successfully Created!
+[2026-08-12 13:37:52,451] 123 root ERROR Error Occured during Training!
