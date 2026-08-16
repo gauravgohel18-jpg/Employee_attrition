@@ -1,0 +1,4 @@
+[2026-08-16 10:35:22,682] 20 root INFO Logging has started.
+[2026-08-16 10:35:53,104] 20 root INFO Started Model Training
+[2026-08-16 10:35:53,293] 24 root INFO Successfully Read Cleaned data
+[2026-08-16 10:35:53,313] 128 root ERROR Error Occured during Training!

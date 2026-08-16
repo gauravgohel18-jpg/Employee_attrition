@@ -1,0 +1,7 @@
+[2026-08-16 10:48:16,902] 20 root INFO Logging has started.
+[2026-08-16 10:48:21,762] 20 root INFO Started Model Training
+[2026-08-16 10:48:21,779] 24 root INFO Successfully Read Cleaned data
+[2026-08-16 10:48:21,836] 43 root INFO Train_Test_split Completed
+[2026-08-16 10:48:21,836] 57 root INFO Logistic Regression pipeline Successfully Created!
+[2026-08-16 10:48:22,085] 99 root INFO Hyperparameter Tuning Started
+[2026-08-16 10:48:22,086] 142 root ERROR Error Occured during Training!

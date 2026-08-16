@@ -1,0 +1,10 @@
+[2026-08-16 10:52:03,496] 20 root INFO Logging has started.
+[2026-08-16 10:52:07,964] 20 root INFO Started Model Training
+[2026-08-16 10:52:07,980] 24 root INFO Successfully Read Cleaned data
+[2026-08-16 10:52:08,039] 43 root INFO Train_Test_split Completed
+[2026-08-16 10:52:08,040] 57 root INFO Logistic Regression pipeline Successfully Created!
+[2026-08-16 10:52:08,305] 101 root INFO Hyperparameter Tuning Started
+[2026-08-16 10:52:25,390] 105 root INFO Hyperparameter Tuning Ended
+[2026-08-16 10:52:25,427] 117 root INFO Comparining Baseline And Tuned Model
+[2026-08-16 10:53:10,084] 137 root INFO Best Model Saved
+[2026-08-16 10:53:10,084] 138 root INFO Training Completed!

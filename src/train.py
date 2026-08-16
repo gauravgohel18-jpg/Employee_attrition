@@ -25,7 +25,15 @@ def train_model():
 
         # separate Features 
 
-        X = df['Age','Monthly_Salary','Years_At_Company','Job_Satisfaction','Overtime']
+        selected_features = [
+        "Age",
+        "Monthly_Salary",
+        "Years_At_Company",
+        "Job_Satisfaction",
+        "Overtime"
+         ]
+
+        X = df[selected_features]
         y = df["Left_Company"]
 
         # Train_test_split the Features
@@ -64,14 +72,22 @@ def train_model():
 
 
         # Hyperparameter grid
-        param_grid = {
-            'C': [0.001, 0.01, 0.1, 1, 10, 100],
-            'penalty': ['l1','l2'],
-            'solver': ['lbfgs', 'liblinear'],
-            'class_weight': [None, 'balanced'],
-            'max_iter': [1000, 2000]
+        param_grid = [
+        {
+            'model__C': [0.001, 0.01, 0.1, 1, 10, 100],
+            'model__penalty': ['l1'],
+            'model__solver': ['liblinear'],
+            'model__class_weight': [None, 'balanced'],
+            'model__max_iter': [1000, 2000]
+        },
+        {
+            'model__C': [0.001, 0.01, 0.1, 1, 10, 100],
+            'model__penalty': ['l2'],
+            'model__solver': ['lbfgs', 'liblinear'],
+            'model__class_weight': [None, 'balanced'],
+            'model__max_iter': [1000, 2000]
         }
-
+        ]
         #  GridSearchCV
         grid_search = GridSearchCV(
             estimator=pipeline,
@@ -89,7 +105,7 @@ def train_model():
         logging.info("Hyperparameter Tuning Ended")
 
         tuned_model = grid_search.best_estimator_
-        Tuned_ev_score = evalution_model(tuned_model,X_test,y_test,'Tuned RandomForest')
+        Tuned_ev_score = evalution_model(tuned_model,X_test,y_test,'Tuned Logistic Regression')
         tuned_cv_score = grid_search.best_score_
 
         # comparing both model

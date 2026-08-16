@@ -6,7 +6,7 @@ from src.logger import logging
 from src.exception import CustomException
 
 
-MODEL_PATH = "models/employee_attrition_model.pkl"
+MODEL_PATH = "models/employee_attrition_model1.pkl"
 
 
 def predict_employee(employee_data):
@@ -39,25 +39,25 @@ def predict_employee(employee_data):
         raise CustomException(e, sys)
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    employee = pd.DataFrame([{
-        "Age": 25,
-        "Monthly_Salary": 35000,
-        "Years_At_Company": 2,
-        "Job_Satisfaction": 2,
-        "Performance_Rating": 3,
-        "Work_Life_Balance": 2,
-        "Training_Hours": 15,
-        "Gender": "MALE",
-        "Department": "IT",
-        "Job_Level": "Junior",
-        "Overtime": "Yes",
-        "Remote_Work": "No",
-        "City": "Surat"
-    }])
+#     employee = pd.DataFrame([{
+#         "Age": 25,
+#         "Monthly_Salary": 35000,
+#         "Years_At_Company": 2,
+#         "Job_Satisfaction": 2,
+#         "Performance_Rating": 3,
+#         "Work_Life_Balance": 2,
+#         "Training_Hours": 15,
+#         "Gender": "MALE",
+#         "Department": "IT",
+#         "Job_Level": "Junior",
+#         "Overtime": "Yes",
+#         "Remote_Work": "No",
+#         "City": "Surat"
+#     }])
 
-    result, probability = predict_employee(employee)
+#     result, probability = predict_employee(employee)
 
-    print("Prediction:", result)
-    print(f"Probability of leaving: {probability:.2%}")
+#     print("Prediction:", result)
+#     print(f"Probability of leaving: {probability:.2%}")
