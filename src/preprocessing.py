@@ -4,11 +4,10 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 
 
-num_features = ['Age','Monthly_Salary','Years_At_Company','Job_Satisfaction',
-                'Performance_Rating','Work_Life_Balance','Training_Hours']
+num_features = ['Age','Monthly_Salary','Years_At_Company','Job_Satisfaction']
 
 
-cat_features = ['Gender','Department','Job_Level','Overtime','Remote_Work','City']
+cat_features = ['Overtime']
 
 
 def create_preprocessor():

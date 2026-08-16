@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score
 from src.preprocessing import create_preprocessor,evalution_model
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
 
@@ -24,7 +25,7 @@ def train_model():
 
         # separate Features 
 
-        X = df.drop(columns = "Left_Company")
+        X = df['Age','Monthly_Salary','Years_At_Company','Job_Satisfaction','Overtime']
         y = df["Left_Company"]
 
         # Train_test_split the Features
@@ -41,16 +42,16 @@ def train_model():
         pipeline = Pipeline(
             steps=[
                 ("preprocessor", preprocessor),
-                ("model", RandomForestClassifier(random_state=42))
+                ("model", LogisticRegression(random_state=42))
                 ]
             )
 
-        logging.info("Random Forest pipeline Successfully Created!")
+        logging.info("Logistic Regression pipeline Successfully Created!")
 
         # train and evalute that model
         Baseline_model = pipeline.fit(X_train,y_train)
 
-        Baseline_ev_score = evalution_model(Baseline_model,X_test,y_test,'Baseline RandomForest')
+        Baseline_ev_score = evalution_model(Baseline_model,X_test,y_test,'Baseline Logistic Regression')
 
         
         Baseline_cv_score = cross_val_score(
@@ -64,10 +65,11 @@ def train_model():
 
         # Hyperparameter grid
         param_grid = {
-            "model__n_estimators": [100, 200, 300],
-            "model__max_depth": [3, 5, 7, None],
-            "model__min_samples_split": [2, 5, 10],
-            "model__min_samples_leaf": [1, 2, 4]
+            'C': [0.001, 0.01, 0.1, 1, 10, 100],
+            'penalty': ['l1','l2'],
+            'solver': ['lbfgs', 'liblinear'],
+            'class_weight': [None, 'balanced'],
+            'max_iter': [1000, 2000]
         }
 
         #  GridSearchCV
@@ -93,8 +95,8 @@ def train_model():
         # comparing both model
 
         print('Model Comparision') 
-        print(f'\n Baseline RandomForest CV score: {Baseline_cv_score}')
-        print(f'\n Tuned RandomForest CV score:{tuned_cv_score}')
+        print(f'\n Baseline Logistic Regression CV score: {Baseline_cv_score}')
+        print(f'\n Tuned Logistic Regression CV score:{tuned_cv_score}')
 
         logging.info("Comparining Baseline And Tuned Model")
 
@@ -113,7 +115,7 @@ def train_model():
         if best_model is not None:
             joblib.dump(
                 best_model,
-                "models/employee_attrition_model.pkl"
+                "models/employee_attrition_model1.pkl"
             )
 
         logging.info('Best Model Saved')

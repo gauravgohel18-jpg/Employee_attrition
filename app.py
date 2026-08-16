@@ -49,61 +49,61 @@ with col1:
         [1, 2, 3, 4, 5]
     )
 
-    performance_rating = st.selectbox(
-        "Performance Rating",
-        [1, 2, 3, 4, 5]
-    )
+    # performance_rating = st.selectbox(
+    #     "Performance Rating",
+    #     [1, 2, 3, 4, 5]
+    # )
 
-    work_life_balance = st.selectbox(
-        "Work Life Balance",
-        [1, 2, 3, 4, 5]
-    )
+    # work_life_balance = st.selectbox(
+    #     "Work Life Balance",
+    #     [1, 2, 3, 4, 5]
+    # )
 
-    training_hours = st.number_input(
-        "Training Hours",
-        min_value=0,
-        value=20
-    )
+    # training_hours = st.number_input(
+    #     "Training Hours",
+    #     min_value=0,
+    #     value=20
+    # )
 
 
 with col2:
 
-    gender = st.selectbox(
-        "Gender",
-        ["MALE", "FEMALE"]
-    )
+    # gender = st.selectbox(
+    #     "Gender",
+    #     ["MALE", "FEMALE"]
+    # )
 
-    department = st.selectbox(
-        "Department",
-        ["FINANCE", "HR", "IT", "MARKETING", "SALES"]
-    )
+    # department = st.selectbox(
+    #     "Department",
+    #     ["FINANCE", "HR", "IT", "MARKETING", "SALES"]
+    # )
 
-    job_level = st.selectbox(
-        "Job Level",
-        ["Junior", "Mid", "Senior", "Manager"]
-    )
+    # job_level = st.selectbox(
+    #     "Job Level",
+    #     ["Junior", "Mid", "Senior", "Manager"]
+    # )
 
     overtime = st.selectbox(
         "Overtime",
         ["Yes", "No"]
     )
 
-    remote_work = st.selectbox(
-        "Remote Work",
-        ["Yes", "No"]
-    )
+    # remote_work = st.selectbox(
+    #     "Remote Work",
+    #     ["Yes", "No"]
+    # )
 
-    city = st.selectbox(
-        "City",
-        [
-            "Ahmedabad",
-            "Delhi",
-            "Mumbai",
-            "Rajkot",
-            "Surat",
-            "Vadodara"
-        ]
-    )
+    # city = st.selectbox(
+    #     "City",
+    #     [
+    #         "Ahmedabad",
+    #         "Delhi",
+    #         "Mumbai",
+    #         "Rajkot",
+    #         "Surat",
+    #         "Vadodara"
+    #     ]
+    # )
 
 
 # -----------------------------
@@ -117,15 +117,15 @@ if st.button("🔮 Predict Attrition"):
         "Monthly_Salary": salary,
         "Years_At_Company": years,
         "Job_Satisfaction": job_satisfaction,
-        "Performance_Rating": performance_rating,
-        "Work_Life_Balance": work_life_balance,
-        "Training_Hours": training_hours,
-        "Gender": gender,
-        "Department": department,
-        "Job_Level": job_level,
+        # "Performance_Rating": performance_rating,
+        # "Work_Life_Balance": work_life_balance,
+        # "Training_Hours": training_hours,
+        # "Gender": gender,
+        # "Department": department,
+        # "Job_Level": job_level,
         "Overtime": overtime,
-        "Remote_Work": remote_work,
-        "City": city
+        # "Remote_Work": remote_work,
+        # "City": city
     }])
 
     result, probability = predict_employee(employee)
